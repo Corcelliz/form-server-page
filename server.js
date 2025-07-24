@@ -5,11 +5,13 @@ const bodyParser = require("body-parser");
 const fs = require("fs");
 const app = express();
 const PORT = process.env.PORT || 3000;
+const cors = require("cors");
 
 const DB_PATH = path.join(__dirname, "mensagens.json");
 
 // Middleware
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Utilitário: lê dados salvos
