@@ -49,7 +49,7 @@ app.post("/enviar", (req, res) => {
 });
 
 // GET: exibe todas as mensagens salvas
-app.get("/mensagens", (req, res) => {
+app.get("/", (req, res) => {
   const mensagens = lerMensagens();
 
   if (mensagens.length === 0) {
